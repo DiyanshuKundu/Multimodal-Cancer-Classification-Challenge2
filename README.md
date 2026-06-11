@@ -167,7 +167,23 @@ After running the full notebook, the following files are saved to `/kaggle/worki
 | `prediction_analysis.png` | Ensemble distribution plots and fold correlation heatmap |
 
 ---
+## Results
 
+| Fold | Validation AUC |
+|------|----------------|
+| 1    | 0.8885         |
+| 2    | 0.9053         |
+| 3    | 0.9130         |
+| 4    | 0.9890         |
+| **Mean ± Std** | **0.9239 ± 0.0386** |
+| **Overall OOF AUC** | **0.9080** |
+
+Training ran for 20 epochs per fold. The best checkpoint per fold was selected based on validation AUC and used for out-of-fold (OOF) inference with 5× TTA. Fold 4 is a notable outlier at 0.9890, likely due to the small number of patients (12 total) making fold composition sensitive to which patients land in validation.
+
+Result on Submitted Test Data : 
+0.7562
+
+---
 ## Reproducibility
 
 A fixed seed (`SEED=42`) is applied to Python's `random`, NumPy, and PyTorch (including CUDA). `cudnn.deterministic=True` and `cudnn.benchmark=False` are set for full reproducibility across runs.
