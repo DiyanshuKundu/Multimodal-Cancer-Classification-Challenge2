@@ -193,3 +193,7 @@ A fixed seed (`SEED=42`) is applied to Python's `random`, NumPy, and PyTorch (in
 ## License
 
 This project is released for educational and competition purposes. The dataset is subject to Kaggle competition terms.
+
+
+
+PLEASE NOTE : In the first cell, the device is shown as CPU but the entire model was trained using a GPU it was for the last few cells that I transfered to CPU for saving CPU time 
